@@ -13,7 +13,6 @@ import requests, re
 def get_music_mvbox(url):
     html = requests.get(url).text
     mp3_url = re.search(r"fileUrl = '(.*?)'", html).group(1)
-    print(mp3_url)
     return mp3_url
 
 

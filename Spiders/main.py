@@ -43,7 +43,7 @@ def main(url):
         print('此链接为虾米音乐')
         print('此音乐下载地址为:' + get_music_xiami(url))
         exit()
-    if 'kugou.com' in url:
+    if 'kugou.com/song' in url:
         print('此链接为酷狗音乐')
         print('此音乐下载地址为:' + get_music_kugou(url))
         exit()
@@ -87,7 +87,7 @@ def main(url):
         print('此链接为喜马拉雅FM')
         print('此音乐下载地址为:' + get_music_ximalayafm(url))
         exit()
-    if 'douoban.fm' in url:
+    if 'douban.fm' in url:
         print('此链接为豆瓣FM')
         print('此音乐下载地址为:' + get_music_doubanfm(url))
         exit()
@@ -98,6 +98,6 @@ def main(url):
 
 
 if __name__ == '__main__':
-    print('*'*30 + '欢迎来到小豪音乐下载助手' + '*'*30)
+    print('*' * 30 + '欢迎来到小豪音乐下载助手' + '*' * 30)
     url = input('[请输入歌曲/FM的网址链接]:')
     main(url)
