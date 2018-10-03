@@ -42,6 +42,7 @@ Version: Python3
 ```
 pip3 install -r requirements.txt
 ```
+> 注意:此项目需安装pyexecjs库，因为网易云音乐(API_music_cloud163.py)的爬取需执行JS文件进行解密
 ## :dolphin:运行截图
 > - **传入歌曲/FM链接获取下载地址**<br><br>
 ![enter image description here](Pic/run.gif)
