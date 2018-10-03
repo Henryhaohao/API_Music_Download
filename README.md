@@ -12,7 +12,25 @@
 软件均仅用于学习交流，请勿用于任何商业用途！感谢大家！
 ## :dolphin:介绍
 该项目为常见的各大音乐平台/FM平台歌曲/音频下载 (目前:包括14个音乐网站,3个FM网站)  
-如果大家有别的想要添加的音乐平台，欢迎大家Fork and Pull
+如果大家有别的想要添加的音乐平台，欢迎大家来Fork and Pull！  
+|音乐平台|歌曲/FM链接示例|
+|----|-----|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[虾米音乐](http://www.xiami.com/)|https://www.xiami.com/song/1776212033|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/#/song?id=1308818967|
+
 > - **网易云音乐 - https://music.163.com/**    示例:https://music.163.com/#/song?id=1308818967
 > - **虾米音乐 - http://www.xiami.com/**    示例:https://www.xiami.com/song/1776212033
 > - **QQ音乐 - https://y.qq.com/**    示例:https://y.qq.com/n/yqq/song/001s47AV2pyfEy.html
@@ -30,9 +48,9 @@
 > - **喜马拉雅FM - https://www.ximalaya.com/**    示例:https://www.ximalaya.com/youshengshu/16679724/102504549
 > - **豆瓣FM - https://douban.fm/**    示例:https://douban.fm/song/1978516gd7f0
 > - **荔枝FM - http://www.lizhi.fm/**    示例:http://www.lizhi.fm/14275/2695272442531976710
-- **项目介绍:通过传入歌曲/FM音频的播放地址返回其对应的歌曲/音频下载地址**
-- **爬虫文件:Spiders目录下的各个python文件**
-- **运行方式:运行Spiders目录下main.py文件即可**
+- 项目介绍:通过传入歌曲/FM音频的播放地址返回其对应的歌曲/音频下载地址
+- 爬虫文件:Spiders目录下的各个python文件
+- 运行方式:运行Spiders目录下main.py文件即可
 ## :dolphin:运行环境
 Version: Python3
 ## :dolphin:安装依赖库
