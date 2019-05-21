@@ -24,11 +24,14 @@ from Spiders.API_music_qianqian_baidu import get_music_qianqian
 from Spiders.API_music_qq import get_music_qq
 from Spiders.API_music_xiami import get_music_xiami
 from Spiders.API_music_ximalayaFM import get_music_ximalayafm
-
+import re
 
 def main(url):
     if 'music.163' in url:
         print('此链接为网易云音乐')
+        search1 = re.search(r'[a-z].+\&', url, re.I)
+        url = search1.group(0).replace('&', '')
+
         print('此音乐下载地址为:' + get_music_cloud163(url))
         exit()
     if 'qq.com' in url:
