@@ -88,6 +88,10 @@ def main(url):
         exit()
     if 'ximalaya.com' in url:
         print('此链接为喜马拉雅FM')
+        # urllm = "https://www.ximalaya.com/youshengshu/16679724/"
+        # search1 = re.search(r"(=)\d*", url, re.I)
+        # url = urllm + search1.group(0)
+        # url = url.replace("=", "")
         print('此音乐下载地址为:' + get_music_ximalayafm(url))
         exit()
     if 'douban.fm' in url:
