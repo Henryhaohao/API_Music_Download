@@ -24,19 +24,26 @@ from Spiders.API_music_qianqian_baidu import get_music_qianqian
 from Spiders.API_music_qq import get_music_qq
 from Spiders.API_music_xiami import get_music_xiami
 from Spiders.API_music_ximalayaFM import get_music_ximalayafm
+from PyQt5.QtWidgets import QApplication, QMainWindow
 import re
+import sys
+import Spiders.mainWindow
 
 def main(url):
     if 'music.163' in url:
         print('此链接为网易云音乐')
         search1 = re.search(r'[a-z].+\&', url, re.I)
-        url = search1.group(0).replace('&', '')
-
-        print('此音乐下载地址为:' + get_music_cloud163(url))
-        exit()
+        if search1 == None:
+            print('此音乐下载地址为:' + get_music_cloud163(url))
+            exit()
+        else:
+            url = search1.group(0).replace('&', '')
+            print('此音乐下载地址为:' + get_music_cloud163(url))
+            exit()
     if 'qq.com' in url:
         print('此链接为QQ音乐')
-        print('此音乐下载地址为:' + get_music_qq(url))
+        xs=get_music_qq(url)
+        print('此音乐下载地址为:' + xs)
         exit()
     if 'taihe.com' in url:
         print('此链接为千千(百度)音乐')
@@ -108,3 +115,7 @@ if __name__ == '__main__':
     print('*' * 30 + '欢迎来到小豪音乐下载助手' + '*' * 30)
     url = input('[请输入歌曲/FM的网址链接]:')
     main(url)
+
+
+#可用：网易云 千千百度 酷我 echo回声 九天音乐 365音乐 一听 5sing 唱吧
+#不可用：酷狗 虾米 QQ（服务器不在提供服务）咪咕音乐 mvbox 喜马拉雅FM 豆瓣FM 荔枝FM
