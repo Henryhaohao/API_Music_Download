@@ -11,22 +11,17 @@ import requests, re
 song_url='https://v1.itooi.cn/tencent/url?id={}&quality=128'
 
 def get_music_qq(url):
-    id = url.rsplit('/', 1)[1].split('.')[0]
-    # html = requests.get(url).text
-    # media_mid = re.search(r'strMediaMid":"(.*?)",', html).group(1)
-    # url = 'https://c.y.qq.com/base/fcgi-bin/fcg_music_express_mobile3.fcg?cid=205361747&uin=1073064953&songmid=%s&filename=C400%s.m4a&guid=8874047000' % (
-    #     id, media_mid)
-    # html = requests.get(url).json()
-    # filename = html['data']['items'][0]['filename']
-    # vkey = html['data']['items'][0]['vkey']
-    # print(html)
-    # print(filename)
-    # print(vkey)
-    if id == '':
+    obj = re.search(r'(?<=songid=)\d+',url,re.I)  #预见匹配
+    surl = 'https://c.y.qq.com/v8/fcg-bin/fcg_play_single_song.fcg?songid={}&tpl=yqq_song_detail&format=jsonp&callback=getOneSo' \
+           'ngInfoCallback'.format(obj.group(0))
+    html = requests.get(surl)
+    obj = re.search(r'(media_mid).+?(",)', html.text, re.I)
+    mid = obj.group(0).rsplit('"', 2)[1]
+    if obj == '':
         print('抱歉,此歌曲为付费版本哦~')
         exit()
     else:
-        url = song_url.format(id)
+        url = song_url.format(mid)
         return url
 
 
