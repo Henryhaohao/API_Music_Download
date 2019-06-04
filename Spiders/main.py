@@ -42,7 +42,13 @@ def main(url):
             exit()
     if 'qq.com' in url:
         print('此链接为QQ音乐')
-        xs=get_music_qq(url)
+        obj = re.search(r'(?<=songid=)\d+', url, re.I)  # 预见匹配
+        if(obj==None):
+            mid = url.rsplit('/', 1)[1]
+            mid = mid.rsplit('.', 1)[0]
+            xs=get_music_qq('0',mid)
+        else:
+            xs=get_music_qq(url,'0')
         print('此音乐下载地址为:' + xs)
         exit()
     if 'taihe.com' in url:
@@ -112,10 +118,10 @@ def main(url):
 
 
 if __name__ == '__main__':
-    print('*' * 30 + '欢迎来到小豪音乐下载助手' + '*' * 30)
+    print('*' * 30 + '欢迎来到音乐下载助手' + '*' * 30)
     url = input('[请输入歌曲/FM的网址链接]:')
     main(url)
 
 
-#可用：网易云 千千百度 酷我 echo回声 九天音乐 365音乐 一听 5sing 唱吧
-#不可用：酷狗 虾米 QQ（服务器不在提供服务）咪咕音乐 mvbox 喜马拉雅FM 豆瓣FM 荔枝FM
+#可用：网易云 千千百度 酷我 echo回声 九天音乐 365音乐 一听 5sing 唱吧 qq音乐
+#不可用：酷狗 虾米（防爬虫，暂找不到解决办法） 咪咕音乐 mvbox 喜马拉雅FM 豆瓣FM 荔枝FM
